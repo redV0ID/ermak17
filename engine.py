@@ -6,6 +6,9 @@ def main():
     screen_width = 80
     screen_height = 50
 
+    player_x = int(screen_width/2)
+    player_y = int(screen_height/2)
+
     tdl.set_font('arial10x10.png', greyscale=True, altLayout=True)
     root_console = tdl.init(screen_width, screen_height,
                             title="Roguelike Tutorial Revised")
