@@ -13,9 +13,9 @@ def main():
     root_console = tdl.init(screen_width, screen_height,
                             title="Roguelike Tutorial Revised")
     while not tdl.event.is_window_closed():
-        root_console.draw_char(5, 7, '@', bg=None, fg=(255, 255, 255))
+        root_console.draw_char(player_x, player_y, '@', bg=None, fg=(255, 255, 255))
         tdl.flush()
-        root_console.draw_char(1, 1, ' ', bg=None)
+        root_console.draw_char(player_x, player_y, ' ', bg=None)
 
         for event in tdl.event.get():
             if event.type == 'KEYDOWN':
