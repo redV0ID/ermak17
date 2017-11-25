@@ -1,5 +1,5 @@
 import tdl
-
+from input_handlers import handle_keys
 
 def main():
 
@@ -13,7 +13,8 @@ def main():
     root_console = tdl.init(screen_width, screen_height,
                             title="Roguelike Tutorial Revised")
     while not tdl.event.is_window_closed():
-        root_console.draw_char(player_x, player_y, '@', bg=None, fg=(255, 255, 255))
+        root_console.draw_char(player_x, player_y, '@', bg=None,
+                               fg=(255, 255, 255))
         tdl.flush()
         root_console.draw_char(player_x, player_y, ' ', bg=None)
 
@@ -27,9 +28,22 @@ def main():
         if not user_input:
             continue
 
-        if user_input.key == 'ESCAPE':
-            return True
+        action = handle_keys(user_input)
 
+        move = action.get('move')
+        exit = action.get('exit')
+        fullscreen = action.get('fullscreen')
+
+        if move:
+        	dx, dy = move
+        	player_x += dx
+        	player_y += dy
+
+        if exit:
+        	return True
+
+        if fullscreen:
+        	tdl.set_fullscreen(not tdl.get_fullscreen())
 
 if __name__ == "__main__":
     main()
