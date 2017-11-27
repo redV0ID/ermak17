@@ -20,8 +20,8 @@ class Rect:
 
     def intersect(self, other):
         """returns True if thiis rect intersects with another"""
-        return (self.x1 <= other.x1 and self.x2 >= other.x1 and
-                self.y1 <= other.y1 and self.y2 >= other.y1)
+        return (self.x1 <= other.x2 and self.x2 >= other.x1 and
+                self.y1 <= other.y2 and self.y2 >= other.y1)
 
 
 def create_room(game_map, room):

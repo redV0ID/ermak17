@@ -30,7 +30,7 @@ def main():
     #consoles and game map
     tdl.set_font('arial10x10.png', greyscale=True, altLayout=True)
     root_console = tdl.init(screen_width, screen_height,
-                            title="Roguelike Tutorial Revised")
+                            title="Ermak17")
     con = tdl.Console(screen_width, screen_height) # creating another console for drawing char on instd. of root
 
     game_map = tdl.map.Map(map_width, map_height) # creating game map obj
